@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { Header } from '../components/header'
 import { Banner } from '../components/banner'
 import { Manga } from '../components/manga'
+import { Footer } from '../components/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function Home() {
         <Banner />
         <Manga />
       </main>
+      <Footer />
     </>
   )
 }

@@ -15,7 +15,7 @@ export const Item = ({ title, description, stars, ...props }: ItemProps) => {
         <div className="border rounded-lg px-6 py-4">
             <HiOutlineFilm color="white" size={60} className="my-4" />
             <h4 className={`text-white text-3xl ${atma.className}`}>{title}</h4>
-            <p className={`text-white leading-6 py-4 ${poppins.className}`}>{description}</p>
+            <p className={`text-white leading-6 py-4 text-base ${poppins.className}`}>{description}</p>
             <div className="flex items-center pt-4 pb-8">
                 <BiStar color="white" size={25} className="mr-4" />
                 <BiStar color="white" size={25} className="mr-4" />
