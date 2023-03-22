@@ -6,7 +6,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: "400" })
 
 export const Footer = () => {
     return (
-        <footer className="pt-16 pb-10">
+        <footer className="pt-32 pb-16">
             <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row lg:justify-between items-center">
                     <div className={`text-white text-sm ${poppins.className}`}>Copyrigth &copy; {new Date().getFullYear()} Abba Sali, Tous droits reservés.</div>
