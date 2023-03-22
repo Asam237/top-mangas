@@ -1,0 +1,28 @@
+name: Take the manga catalogue
+description: Take the manga catalogue
+title: "DO NOT EDIT - takes the catalogue"
+body:
+  - type: input
+    id: title
+    attributes:
+      label:  What is the title of the manga  ?
+      description: Add the title of the manga here to better index it.
+  - type: input
+    id: description
+    attributes:
+      label:  What is the description of the manga ?
+      description: Add the description of the manga.
+  - type: dropdown
+    id: tags
+    attributes:
+      label:  What are the tags of the manga ?
+      options:
+        - Action
+        - Sport
+        - Footbal
+        - Super hero
+        - Crime
+        - Aventure
+        - Romance
+        - Fantasy
+        - Science

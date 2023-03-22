@@ -21,9 +21,9 @@ export const Item = ({ title, description, stars, tags, ...props }: ItemProps) =
                 {
                     tags?.map((item, index) => {
                         return (
-                            <>
-                                <div key={index}><span className="bg-gray-300 px-6 py-2 rounded-full text-black mr-2">{item}</span></div>
-                            </>
+                            <div key={index}>
+                                <div><span className="bg-gray-300 px-6 py-2 rounded-full text-black mr-2">{item}</span></div>
+                            </div>
                         )
                     })
                 }
