@@ -1,0 +1,32 @@
+.dark {
+  background: black;
+}
+.dark .link {
+  color: white;
+}
+.dart .itm:hover {
+  border-width: 2px;
+  border-color: white;
+}
+
+.light {
+  background: white;
+}
+.light p,
+.light h1,
+.light h2,
+.light h3,
+.light .link,
+.light h4 {
+  color: black;
+}
+
+.light button {
+  background: black;
+  color: white;
+}
+
+.light .itm:hover {
+  border-width: 2px;
+  border-color: rgba(80, 80, 80, 0.631);
+}
