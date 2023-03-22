@@ -9,7 +9,7 @@ export const Footer = () => {
         <footer className="pt-32 pb-16">
             <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row lg:justify-between items-center">
-                    <div className={`text-white text-center text-sm ${poppins.className}`}>Copyrigth &copy; {new Date().getFullYear()} Abba Sali, Tous droits reservés.</div>
+                    <div className={`text-white text-center text-sm ${poppins.className}`}>Copyrigth &copy; {new Date().getFullYear()} <Link className="underline" href={"https://abbasali.vercel.app/"}> Abba Sali</Link>, Tous droits reservés.</div>
                     <div className={`text-white text-sm pt-4 lg:pt-0 ${poppins.className}`}>
                         <div className="flex flex-col lg:flex-row">
                             <p>Follow me </p>
