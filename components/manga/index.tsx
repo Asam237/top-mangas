@@ -3,7 +3,6 @@ import jsonfile from "../../assets/data/manga.json"
 
 
 export const Manga = () => {
-    console.log("My JSON", jsonfile["items"])
     return (
         <div className="mx-8 lg:mx-0 mt-8 lg:mt-0">
             <div className="container mx-auto">
