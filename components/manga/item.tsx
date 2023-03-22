@@ -12,7 +12,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: "400" })
 
 export const Item = ({ title, description, stars, ...props }: ItemProps) => {
     return (
-        <div className="border rounded-lg px-6 py-4">
+        <div className="border-gray-400 border rounded-lg px-6 py-4 hover:border-2 hover:border-white">
             <HiOutlineFilm color="white" size={60} className="my-4" />
             <h4 className={`text-white text-3xl ${atma.className}`}>{title}</h4>
             <p className={`text-white leading-6 py-4 text-base ${poppins.className}`}>{description}</p>
