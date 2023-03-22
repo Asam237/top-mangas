@@ -12,20 +12,20 @@ body:
     attributes:
       label:  What is the description of the manga ?
       description: Add the description of the manga.
-  - type: dropdown
+  - type: checkboxes
     id: tags
     attributes:
-      label:  What are the tags of the manga ?
+      label: What are the tags of the manga ?
       options:
-        - Action
-        - Sport
-        - Footbal
-        - Super hero
-        - Crime
-        - Aventure
-        - Romance
-        - Fantasy
-        - Science
+        - label: Action
+        - label: Sport
+        - label: Crime
+        - label: Aventure
+        - label: Romance
+        - label: Fantasy
+        - label: Science
+        - label: Football
+        - label: Super hero
   - type: input
     id: stars
     attributes:
