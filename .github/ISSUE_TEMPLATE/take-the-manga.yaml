@@ -29,5 +29,5 @@ body:
   - type: input
     id: stars
     attributes:
-      label:  Number of stars ?
-      description: Add the number of stars of the manga.
+      label:  Number of stars (chiffre) ?
+      description: Add the number of stars of the manga (for example 5).
