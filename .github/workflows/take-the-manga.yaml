@@ -9,9 +9,6 @@ jobs:
     if: contains(github.event.issue.title, 'DO NOT EDIT') && contains(github.event.issue.title, 'takes the manga')
     steps:
       - uses: actions/checkout@v2
-        # with:
-        #   token: ${{ secrets.GA_WORKFLOW_DEPLOYMENTS_TOKEN }}
-
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
@@ -21,39 +18,39 @@ jobs:
         with:
           template-path: .github/ISSUE_TEMPLATE/take-the-manga.yaml
 
-      # - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > manga_submission.json
+      - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > manga_submission.json
 
-      # - run: |
-      #     cat manga_submission.json | jq
-      # - name: Set convert json to yaml
-      #   shell: bash
-      #   run: |
-      #     cat manga_submission.json | yq e '{"items": [.]}' -P - > manga_submission.yaml
-      # - run: cat manga_submission.yaml
-      # - name: Set convert json to yaml
-      #   shell: bash
-      #   run: |
-      #     yq ea '. as $item ireduce ({}; . *+ $item)' -i ./assets/data/survey.yaml manga_submission.yaml
-      # - run: cat manga_submission.yaml
+      - run: |
+          cat manga_submission.json | jq
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          cat manga_submission.json | yq e '{"items": [.]}' -P - > manga_submission.yaml
+      - run: cat manga_submission.yaml
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          yq ea '. as $item ireduce ({}; . *+ $item)' -i ./assets/data/manga.yaml manga_submission.yaml
+      - run: cat manga_submission.yaml
 
-      # - run: cat ./assets/data/survey.yaml
+      - run: cat ./assets/data/manga.yaml
 
-      # - name: Set convert json to yaml
-      #   shell: bash
-      #   run: |
-      #     yq ea '. as $item ireduce ({}; . *+ $item)' -i ./assets/data/survey.yaml manga_submission.yaml
-      # - run: cat ./assets/data/survey.yaml
+      - name: Set convert json to yaml
+        shell: bash
+        run: |
+          yq ea '. as $item ireduce ({}; . *+ $item)' -i ./assets/data/manga.yaml manga_submission.yaml
+      - run: cat ./assets/data/manga.yaml
 
 
 
-      # - name: Commit changes
-      #   shell: bash
-      #   run: |
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com" && \
-      #     git config --global user.name "github-actions[bot]" && \
-      #     git add ./assets/data/survey.yaml && \
-      #     git commit -m 'new manga answer' && \
-      #     git push
-      # - uses: peter-evans/close-issue@v1
-      #   with:
-      #     comment: Your manga answer was submitted and will be deployed in few minutes here ...
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com" && \
+          git config --global user.name "github-actions[bot]" && \
+          git add ./assets/data/manga.yaml && \
+          git commit -m 'new manga answer' && \
+          git push
+      - uses: peter-evans/close-issue@v1
+        with:
+          comment: Your manga answer was submitted and will be deployed in few minutes here ...
