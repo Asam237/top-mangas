@@ -1,16 +1,20 @@
 import { Item } from "./item"
+import jsonfile from "../../assets/data/manga.json"
+
 
 export const Manga = () => {
+    console.log("My JSON", jsonfile["items"])
     return (
         <div className="mx-8 lg:mx-0 mt-8 lg:mt-0">
             <div className="container mx-auto">
                 <div className="grid gap-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                    <Item title="One Peace" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa dolor eaque facilis numquam obcaecati sapiente, sunt totam vitae? Blanditiis eligendi" tags={["Action", "Combat"]} />
-                    <Item title="One Peace" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa dolor eaque facilis numquam obcaecati sapiente, sunt totam vitae? Blanditiis eligendi" tags={["Action", "Science fiction"]} />
-                    <Item title="One Peace" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa dolor eaque facilis numquam obcaecati sapiente, sunt totam vitae? Blanditiis eligendi" tags={["Football", "Combat"]} />
-                    <Item title="One Peace" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa dolor eaque facilis numquam obcaecati sapiente, sunt totam vitae? Blanditiis eligendi" tags={["Aventure", "Combat"]} />
-                    <Item title="One Peace" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa dolor eaque facilis numquam obcaecati sapiente, sunt totam vitae? Blanditiis eligendi" tags={["Action", "Science fiction"]} />
-                    <Item title="One Peace" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa dolor eaque facilis numquam obcaecati sapiente, sunt totam vitae? Blanditiis eligendi" tags={["Football", "Combat"]} />
+                    {
+                        jsonfile["items"].map((item, index) => {
+                            return (
+                                <Item key={index} title={item.title} description={item.description} tags={item.tags} />
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>
