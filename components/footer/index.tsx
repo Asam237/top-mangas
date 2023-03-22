@@ -1,4 +1,5 @@
 import { Poppins } from "@next/font/google"
+import Link from "next/link"
 import { AiFillLinkedin, AiFillTwitterCircle, AiFillGithub } from "react-icons/ai"
 
 const poppins = Poppins({ subsets: ['latin'], weight: "400" })
@@ -13,20 +14,20 @@ export const Footer = () => {
                         <div className="flex flex-col lg:flex-row">
                             <p>Follow me </p>
                             <div className="flex py-2 lg:py-0">
-                                <div className="lg:ml-4">
+                                <Link href={"http://github.com/Asam237"} className="lg:ml-4">
                                     <AiFillGithub size={25} />
-                                </div>
-                                <div className="lg:ml-4">
+                                </Link>
+                                <Link href={"https://www.linkedin.com/in/abba-sali-aboubakar-mamate/"} className="lg:ml-4">
                                     <AiFillLinkedin size={25} />
-                                </div>
-                                <div className="lg:ml-4">
+                                </Link>
+                                <Link href={"https://twitter.com/asam_237"} className="lg:ml-4">
                                     <AiFillTwitterCircle size={25} />
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer >
     )
 }
