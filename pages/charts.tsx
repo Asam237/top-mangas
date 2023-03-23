@@ -1,4 +1,6 @@
 import Head from "next/head"
+import DoughnutChart from "../components/charts"
+import LineChart from "../components/charts"
 import { Footer } from "../components/footer"
 import { Header } from "../components/header"
 
@@ -15,7 +17,7 @@ export default function Chart() {
             <main>
                 <div className="py-4 lg:py-20 mx-4 lg:mx-0">
                     <div className="container mx-auto">
-                        <p>Main Here</p>
+                        {/* <DoughnutChart /> */}
                     </div>
                 </div>
             </main>

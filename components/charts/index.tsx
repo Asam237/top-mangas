@@ -1,88 +1,45 @@
-import React, { Fragment } from "react";
-import { Line } from "react-chartjs-2";
-import "chartjs-plugin-datalabels";
-import { Chart } from "chart.js";
-import ChartDataLabels from "chartjs-plugin-datalabels";
-Chart.register(ChartDataLabels);
-
+import React from 'react';
+import { Doughnut } from 'react-chartjs-2';
 const data = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [
         {
-            label: "Avg interest by month",
-            data: [0.7, 0.81, 0.71, 0.87, 0.9],
-            fill: false,
-            backgroundColor: "transparent",
-            borderColor: "#06a1e1",
-            tension: 0.1,
-            borderWidth: 4
-        }
-    ]
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1,
+        },
+    ],
 };
-
-const options: any = {
-    maintainAspectRatio: false,
-    scales: {
-        x: {
-            grid: {
-                display: false
-            }
-        },
-        y: {
-            display: false,
-            grid: {
-                display: false
-            }
-        }
-    },
-    plugins: {
-        legend: {
-            display: false
-        },
-        title: {
-            display: true,
-            text: "Avg interest by month (days)",
-            padding: {
-                bottom: 30
-            },
-            weight: "bold",
-            color: "#00325c",
-            font: {
-                size: 13
-            },
-            align: "start"
-        },
-        datalabels: {
-            display: true,
-            color: "black",
-            align: "end",
-            padding: {
-                right: 2
-            },
-            labels: {
-                padding: { top: 10 },
-                title: {
-                    font: {
-                        weight: "bold"
-                    }
-                },
-                value: {
-                    color: "green"
-                }
-            },
-            formatter: function (value: any) {
-                return "\n" + value;
-            }
-        }
-    }
-};
-
-const LineChart = () => (
-    <Fragment>
-        <div style={{ height: "300px" }}>
-            <Line data={data} options={options} />
+const DoughnutChart = () => (
+    <>
+        <div className='header'>
+            <h1 className='title'>Doughnut Chart</h1>
+            <div className='links'>
+                <a
+                    className='btn btn-gh'
+                    href='https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/Doughnut.js'
+                >
+                    Github Source
+                </a>
+            </div>
         </div>
-    </Fragment>
+        <Doughnut data={data} />
+    </>
 );
-
-export default LineChart;
+export default DoughnutChart;
