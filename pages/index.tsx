@@ -3,6 +3,7 @@ import { Header } from '../components/header'
 import { Banner } from '../components/banner'
 import { Manga } from '../components/manga'
 import { Footer } from '../components/footer'
+import { PaginationPresentation } from '../components/pagination'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Banner />
         <Manga />
+        <PaginationPresentation />
       </main>
       <Footer />
     </>
