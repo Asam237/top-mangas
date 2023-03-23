@@ -1,5 +1,6 @@
 import { Item } from "./item"
 import jsonfile from "../../assets/data/manga.json"
+import { datas } from "../../assets/data/data"
 
 
 export const Manga = () => {
@@ -8,9 +9,9 @@ export const Manga = () => {
             <div className="container mx-auto">
                 <div className="grid gap-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                     {
-                        jsonfile["items"].map((item, index) => {
+                        datas["items"].map((item, index) => {
                             return (
-                                <Item key={index} title={item.title} description={item.description} tags={item.tags} />
+                                <Item key={index} title={item.title} description={item.description} tags={item.tags} logo={item.logo}/>
                             )
                         })
                     }

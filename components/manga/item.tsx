@@ -1,9 +1,11 @@
 import { Atma, Poppins } from "@next/font/google";
+import Image from "next/image";
 import { BiStar } from "react-icons/bi"
 import { HiOutlineFilm } from "react-icons/hi"
 
 interface ItemProps extends React.AllHTMLAttributes<HTMLElement> {
     title?: string;
+    logo?: any;
     description?: string;
     stars?: any;
     tags?: string[]
@@ -11,11 +13,11 @@ interface ItemProps extends React.AllHTMLAttributes<HTMLElement> {
 const atma = Atma({ subsets: ['latin'], weight: "400" })
 const poppins = Poppins({ subsets: ['latin'], weight: "400" })
 
-export const Item = ({ title, description, stars, tags, ...props }: ItemProps) => {
+export const Item = ({ title, description, stars, tags, logo, ...props }: ItemProps) => {
     return (
         <div className="border-gray-400 border rounded-lg px-6 py-4 itm">
-            <HiOutlineFilm size={60} className="my-4 link" />
-            <h4 className={`text-white text-3xl ${atma.className}`}>{title}</h4>
+            <Image className="w-96 h-36 object-contain mx-auto" alt={logo} src={logo} />
+            {/* <h4 className={`text-white text-3xl ${atma.className}`}>{title}</h4> */}
             <p className={`text-white leading-6 py-4 text-base ${poppins.className}`}>{description}</p>
             <div className="flex items-center py-4">
                 {
