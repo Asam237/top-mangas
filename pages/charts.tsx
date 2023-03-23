@@ -13,7 +13,11 @@ export default function Chart() {
             </Head>
             <Header />
             <main>
-                <p>Main Here</p>
+                <div className="py-4 lg:py-20 mx-4 lg:mx-0">
+                    <div className="container mx-auto">
+                        <p>Main Here</p>
+                    </div>
+                </div>
             </main>
             <Footer />
         </>
