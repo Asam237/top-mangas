@@ -1,8 +1,10 @@
 import Head from "next/head"
-import DoughnutChart from "../components/charts"
-import LineChart from "../components/charts"
 import { Footer } from "../components/footer"
 import { Header } from "../components/header"
+import { BiError } from "react-icons/bi"
+import { Atma } from "@next/font/google"
+
+const atma = Atma({ subsets: ['latin'], weight: "400" })
 
 export default function Chart() {
     return (
@@ -15,9 +17,12 @@ export default function Chart() {
             </Head>
             <Header />
             <main>
-                <div className="py-4 lg:py-20 mx-4 lg:mx-0">
+                <div className="py-8 lg:py-40 mx-4 lg:mx-0">
                     <div className="container mx-auto">
-                        {/* <DoughnutChart /> */}
+                        <div className="flex flex-col justify-center items-center">
+                            <BiError className="link" size={200} />
+                            <p className={`link ${atma.className} text-4xl pt-8`}>En cours de creation..</p>
+                        </div>
                     </div>
                 </div>
             </main>
