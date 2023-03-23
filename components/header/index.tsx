@@ -26,15 +26,15 @@ export const Header = () => {
                     <Link href={"/"} className={`${atma.className} text-4xl font-bold text-white link`}>TopMangas</Link>
                     <nav>
                         <ul className="flex flex-col lg:flex-row items-center">
-                            <li className="flex items-center justify-center pt-2 lg:pt-0">
+                            <li className="flex items-center justify-center pt-6 lg:pt-0">
                                 <BiCoffee className="link" size={30} />
                                 <Link href={"https://www.buymeacoffee.com/abbasaliab3"} className={`${poppins.className} ml-2 text-base text-white hover:underline link`}>buy me a coffee</Link>
                             </li>
                             <li>
-                                <a href="/charts"><button className={`mt-4 lg:mt-0 lg:ml-4 bg-white rounded-lg font-bold px-6 py-4 text-black flex items-center justify-center ${poppins.className}`}> <BiStats size={25} className="mr-2" /> Voir le graphe</button></a>
+                                <a href="/charts"><button className={`mt-6 lg:mt-0 lg:ml-4 bg-white rounded-lg font-bold px-6 py-4 text-black flex items-center justify-center ${poppins.className}`}> <BiStats size={25} className="mr-2" /> Voir le graphe</button></a>
                             </li>
                             <li>
-                                <HiLightBulb className="ml-4 link cursor-pointer" onClick={toggleTheme} size={30} />
+                                <HiLightBulb className="mt-6 lg:mt-0 lg:ml-4 link cursor-pointer" onClick={toggleTheme} size={30} />
                             </li>
                         </ul>
                     </nav>
