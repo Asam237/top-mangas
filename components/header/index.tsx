@@ -1,6 +1,6 @@
 import { Atma, Poppins } from "@next/font/google"
 import Link from "next/link"
-import { BiStats, BiCoffee } from "react-icons/bi"
+import { BiStats, BiCoffee, BiBot } from "react-icons/bi"
 import { HiLightBulb } from "react-icons/hi"
 import { useEffect, useState } from 'react'
 
@@ -20,10 +20,15 @@ export const Header = () => {
         document.body.className = theme;
     }, [theme]);
     return (
-        <header className={`py-8 ${theme}`}>
+        <header className={`py-8 ${theme} sticky top-0 left-0 z-40`}>
             <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row items-center lg:justify-between">
-                    <Link href={"/"} className={`${atma.className} text-4xl font-bold text-white link`}>TopMangas</Link>
+                <div className="flex flex-col lg:flex-row items-center lg:justify-between border-b pb-6 blink">
+                    <div className="flex justify-center flex-row items-center">
+                        <BiBot size={35} className="mr-2 link" />
+                        <Link href={"/"} className={`${atma.className} text-4xl font-bold text-white link`}>
+                            TopMangas
+                        </Link>
+                    </div>
                     <nav>
                         <ul className="flex flex-col lg:flex-row items-center">
                             <li className="flex items-center justify-center pt-6 lg:pt-0">

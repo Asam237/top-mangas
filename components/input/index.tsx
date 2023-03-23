@@ -22,7 +22,7 @@ export const Input = ({ label, error, ...props }: InputProps) => {
         <>
             <label className="flex flex-col gap-1">
                 <span className={`text-base link ${poppins.className}`}>{label}</span>
-                <input className="border-2 border-gray-200 outline-none rounded-md p-1 focus:border-gray-400" {...props} />
+                <input className="border-2 border-gray-200 outline-none rounded-md p-2 focus:border-gray-400" {...props} />
                 <small className="error">{error}</small>
             </label>
         </>
