@@ -8,7 +8,7 @@ const atma = Atma({ subsets: ['latin'], weight: "400" })
 const poppins = Poppins({ subsets: ['latin'], weight: "400" })
 
 export const Header = () => {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
     const toggleTheme = () => {
         if (theme === 'light') {
             setTheme('dark');
@@ -31,7 +31,7 @@ export const Header = () => {
                                 <Link href={"#makedonation"} className={`${poppins.className} ml-2 text-base text-white hover:underline link`}>Make a donation</Link>
                             </li>
                             <li>
-                                <button className={`mt-4 lg:mt-0 lg:ml-4 bg-white rounded-lg font-bold px-6 py-4 text-black flex items-center justify-center ${poppins.className}`}> <BiStats size={25} className="mr-2" /> Voir le graphe</button>
+                                <a href="/charts"><button className={`mt-4 lg:mt-0 lg:ml-4 bg-white rounded-lg font-bold px-6 py-4 text-black flex items-center justify-center ${poppins.className}`}> <BiStats size={25} className="mr-2" /> Voir le graphe</button></a>
                             </li>
                             <li>
                                 <HiLightBulb className="ml-4 link cursor-pointer" onClick={toggleTheme} size={30} />
