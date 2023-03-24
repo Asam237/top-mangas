@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import { Header } from '../components/header'
 import { Banner } from '../components/banner'
-import { Manga } from '../components/manga'
 import { Footer } from '../components/footer'
 import { PaginationPresentation } from '../components/pagination'
-import { SearchInput } from '../components/search'
+import { datas } from '../assets/data/data'
+import { useState } from 'react'
+import { Item } from '../components/manga/item'
+import { HiSearch } from 'react-icons/hi'
 
 export default function Home() {
+  const [query, setQuery] = useState("")
   return (
     <>
       <Head>
@@ -18,8 +21,35 @@ export default function Home() {
       <Header />
       <main>
         <Banner />
-        <SearchInput />
-        <Manga />
+        <div className="py-4 lg:py-20 mx-4 lg:mx-0">
+          <div className="container mx-auto">
+            <div className="flex flex-col px-4 lg:px-0 w-full lg:w-[470px]">
+              <div className="border-2 bg-white border-gray-200 outline-none rounded-md p-2 focus:border-gray-400">
+                <div className="flex items-center px-2 py-1">
+                  <HiSearch size={25} className="text-gray-400" />
+                  <input className="w-full border-none ml-4 outline-none" onChange={event => setQuery(event.target.value)} placeholder="Search..." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mx-8 lg:mx-0 mt-8 lg:mt-0">
+          <div className="container mx-auto">
+            <div className="grid gap-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+              {
+                datas["items"].filter(item => {
+                  if (query === '') {
+                    return item;
+                  } else if (item.title.toLowerCase().includes(query.toLowerCase())) {
+                    return item;
+                  }
+                }).map((item, index) => (
+                  <Item key={index} title={item.title} description={item.description} tags={item.tags} logo={item.logo} />
+                ))
+              }
+            </div>
+          </div>
+        </div>
         <PaginationPresentation />
       </main>
       <Footer />
