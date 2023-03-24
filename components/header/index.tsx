@@ -31,11 +31,11 @@ export const Header = () => {
                     </div>
                     <nav>
                         <ul className="flex flex-col lg:flex-row items-center">
-                            <li className="flex items-center justify-center pt-6 lg:pt-0">
+                            <li className="hidden lg:flex items-center justify-center pt-6 lg:pt-0">
                                 <BiCoffee className="link" size={30} />
                                 <Link href={"https://www.buymeacoffee.com/abbasaliab3"} className={`${poppins.className} ml-2 text-base text-white hover:underline link`}>buy me a coffee</Link>
                             </li>
-                            <li>
+                            <li className="hidden lg:flex">
                                 <Link href="/charts"><button className={`mt-6 lg:mt-0 lg:ml-4 bg-white rounded-lg font-bold px-6 py-4 text-black flex items-center justify-center ${poppins.className}`}> <BiStats size={25} className="mr-2" /> Voir le graphe</button></Link>
                             </li>
                             <li>
