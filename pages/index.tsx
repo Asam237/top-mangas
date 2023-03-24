@@ -4,6 +4,7 @@ import { Banner } from '../components/banner'
 import { Manga } from '../components/manga'
 import { Footer } from '../components/footer'
 import { PaginationPresentation } from '../components/pagination'
+import { SearchInput } from '../components/search'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
       <main>
         <Banner />
+        <SearchInput />
         <Manga />
         <PaginationPresentation />
       </main>
