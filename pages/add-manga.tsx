@@ -5,11 +5,14 @@ import { Header } from "../components/header";
 import { Input, MySelect, TextArea } from "../components/input";
 import Dekupng from "../assets/images/deku.png"
 import Image from "next/image";
+import { useRouter } from "next/router"
 
 const poppins = Poppins({ subsets: ['latin'], weight: "400" })
 export default function AddManga() {
+    const navigate = useRouter();
     const handleAdd = () => {
         console.log("Hello World 237")
+        navigate.push("/")
     }
     return (
         <>
