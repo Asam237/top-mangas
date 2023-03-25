@@ -4,12 +4,33 @@ import { Banner } from '../components/banner'
 import { Footer } from '../components/footer'
 import { PaginationPresentation } from '../components/pagination'
 import { datas } from '../assets/data/data'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Item } from '../components/manga/item'
 import { HiSearch } from 'react-icons/hi'
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../utils/firebase'
 
 export default function Home() {
   const [query, setQuery] = useState("")
+  const [data, setData] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      let list: any = [];
+      try {
+        const querySnapshot = await getDocs(collection(db, "users"));
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id, " => ", doc.data());
+          list.push({ ...doc.data() })
+          setData(list);
+        });
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+    fetchData();
+  }, [])
+
   return (
     <>
       <Head>
