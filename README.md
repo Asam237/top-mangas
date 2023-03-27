@@ -4,26 +4,15 @@ https://user-images.githubusercontent.com/34966088/226965690-303bdc93-773d-44b9-
 
 ## Introduction
 
-A Leaderboards (CM) - WakaTime - Programming and time tracking leaderboard
+A project that lists the top manga of the moment.
 <br/>
 
 ## Composition
 
 This starter kit is composed of:
 
-- [Node.js](https://nodejs.org/en)
+- [Next.js](https://nextjs.org/)
   <br/>
-- [TypeScript](https://www.typescriptlang.org/)
-  <br/>
-- [Axios](https://axios-http.com/docs/intro)
-  <br/>
-- [Cheerio](https://cheerio.js.org/)
-  <br/>
-- [CSV Writter](https://www.npmjs.com/package/csv-writer)
-  <br/>
-- [File System](https://nodejs.org/api/fs.html)
-  <br/>
-  
 
 ## Development
 
@@ -32,6 +21,24 @@ From your terminal:
 ```sh
 npm run dev
 ```
+
+This starts your app in development mode, rebuilding assets on file changes.
+
+## Deployment
+
+First, build your app for production:
+
+```sh
+npm run build
+```
+
+Then run the app in production mode:
+
+```sh
+npm start
+```
+
+Now you'll need to pick a host to deploy it to.
 
 ## Authors
 
